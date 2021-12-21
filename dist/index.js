@@ -8457,7 +8457,7 @@ async function run() {
     const response = await fetch(url);
     console.log("response ${response}");
     const { results } = await response.json();
-    console.log("results");
+    console.log("results ${results}");
     const gifUrl = results[0].media[0].tinygif.url;
     console.log("gifUrl ${gifUrl}");
     
