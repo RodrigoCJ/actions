@@ -13,7 +13,7 @@ async function run() {
     const gifUrl = results[0].media[0].tinygif.url;
 
     const octokit = github.getOctokit(GITHUB_TOKEN);
-
+    
     const { context = {} } = github;
     const { pull_request } = context.payload;  
     
