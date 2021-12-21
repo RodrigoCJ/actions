@@ -8,7 +8,8 @@ async function run() {
     const { context = {} } = github;
     const { pull_request } = context.payload;  
     
-    await GITHUB_TOKEN.rest.issues.createComment({
+    await octokit.rest.issues.createComment({
+      ...context.repo,
       issue_number: pull_request.number,
       body: 'Thank you for submitting a pull request! We will try to review this as soon as we can.'
     });
