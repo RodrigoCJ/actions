@@ -8453,8 +8453,6 @@ async function run() {
     const { pull_request } = context.payload;  
     
     await octokit.rest.issues.createComment({
-      owner: payload.repository.owner.login,
-      repo: payload.repository.name,
       body: "Hello, World!",
     });
   }
