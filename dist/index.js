@@ -8452,9 +8452,10 @@ async function run() {
     const { context = {} } = github;
     const { pull_request } = context.payload;  
     
-    await GITHUB_TOKEN.rest.issues.createComment({
-      issue_number: pull_request.number,
-      body: 'Thank you for submitting a pull request! We will try to review this as soon as we can.'
+    await octokit.rest.issues.createComment({
+      owner: payload.repository.owner.login,
+      repo: payload.repository.name,
+      body: "Hello, World!",
     });
   }
 
