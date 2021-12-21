@@ -9,6 +9,8 @@ async function run() {
     const { pull_request } = context.payload;  
     
     await octokit.rest.issues.createComment({
+      ...context.repo,
+  issue_number: pull_request.number,
       body: "Hello, World!",
     });
   }
